@@ -40,12 +40,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String login(String username, String password){
-        /*UserExample userExample=new UserExample();
+        User user=new User();
+        user.setPassword(password);
+        user.setUsername(username);
+        UserExample userExample=new UserExample();
         UserExample.Criteria criteria=userExample.createCriteria();
         criteria.andUsernameEqualTo(username);
         criteria.andPasswordEqualTo(password);
-
-        List<User> list=userMapper.selectByExample(userExample);*/
-        return null;
+        List<User> list=userMapper.selectByExample(userExample);
+        if(list.isEmpty()){
+            return "Error";
+        }else{
+            return "OK";
+        }
     }
 }

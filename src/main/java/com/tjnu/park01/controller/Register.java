@@ -19,6 +19,13 @@ public class Register {
         return status;
     }
 
+    @RequestMapping(value = "/login")
+    @ResponseBody
+    public Object login(String username, String password){
+        String status=userService.login(username,password);
+        return status;
+    }
+
     @RequestMapping(value="/user")
     @ResponseBody
     public Object user(long id){
