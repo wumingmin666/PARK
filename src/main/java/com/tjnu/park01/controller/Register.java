@@ -1,6 +1,7 @@
 package com.tjnu.park01.controller;
 
 import com.tjnu.park01.domain.User;
+import com.tjnu.park01.service.CarportService;
 import com.tjnu.park01.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,11 +26,12 @@ public class Register {
         String status=userService.login(username,password);
         return status;
     }
-
+    /*
     @RequestMapping(value="/user")
     @ResponseBody
     public Object user(long id){
         User user= userService.queryUserById(id);
         return user;
     }
+    */
 }
